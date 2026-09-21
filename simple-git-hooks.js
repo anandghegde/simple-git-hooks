@@ -263,7 +263,7 @@ function _getHooksDirPath(projectRoot, gitRoot) {
  * does not make one project overwrite hooks shared with other projects.
  *
  * @param {string} projectRoot - The absolute path to the working directory
- * @returns {string} - The configured value, or an empty string if it is not set
+ * @returns {string | undefined} - The configured value, or undefined if it is not set
  * @private
  */
 function _getRepoScopedHooksPath(projectRoot) {
@@ -283,8 +283,6 @@ function _getRepoScopedHooksPath(projectRoot) {
             // and --get exits with 1 when the key is not set. Both mean "try the next scope"
         }
     }
-
-    return ''
 }
 
 /**
